@@ -11,9 +11,9 @@ class WorkFlowSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      desktop: (p0) => WorkFlowDesktopSection(),
-      mobile: (p0) => WorkFlowMobileSection(),
-      tablet: (p0) => WorkFlowTabletSection(),
+      desktop: (p0) => const WorkFlowDesktopSection(),
+      mobile: (p0) => const WorkFlowMobileSection(),
+      tablet: (p0) => const WorkFlowTabletSection(),
     );
   }
 }

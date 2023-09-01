@@ -14,8 +14,11 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
     double w = MediaQuery.of(context).size.width;
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: w * 0.04),
-      height: w * 1.6,
+      padding: EdgeInsets.symmetric(
+        horizontal: w * 0.04,
+        vertical: w * 0.1,
+      ),
+      height: w * 1.9,
       width: w,
       color: AppColors.bgColor1,
       child: Column(

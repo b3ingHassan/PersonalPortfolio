@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/utils/colors.dart';
 
-class WorkFlowMobileSection extends StatefulWidget {
-  const WorkFlowMobileSection({super.key});
+import '../utils/colors.dart';
+class PortfolioMobileSection extends StatefulWidget {
+  const PortfolioMobileSection({super.key});
 
   @override
-  State<WorkFlowMobileSection> createState() => _WorkFlowMobileSectionState();
+  State<PortfolioMobileSection> createState() => _PortfolioMobileSectionState();
 }
 
-class _WorkFlowMobileSectionState extends State<WorkFlowMobileSection> {
+class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -18,12 +18,12 @@ class _WorkFlowMobileSectionState extends State<WorkFlowMobileSection> {
         horizontal: w * 0.034,
         vertical: w * 0.1,
       ),
-      color: AppColors.bgWhite2,
+      color: AppColors.bgWhite1,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "WORK FLOW",
+            "PORTFOLIO",
             style: TextStyle(
               fontSize: w * 0.03,
               fontWeight: FontWeight.w500,
@@ -34,60 +34,48 @@ class _WorkFlowMobileSectionState extends State<WorkFlowMobileSection> {
             height: w * 0.02,
           ),
           Text(
-            "Design Process",
+            "Best Projects",
             style: TextStyle(
               fontSize: w * 0.05,
               fontWeight: FontWeight.bold,
               color: AppColors.titleTxt,
             ),
           ),
-          SizedBox(
-            height: w * 0.06,
-          ),
-          DesignProcessCard(
+          SizedBox(height: w * 0.06),
+          ProjectsCard(
             w: w,
-            title: "Research",
+            title: "GharTak Food Delivery App",
             description:
-                'This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements.',
+                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
           ),
           SizedBox(
             height: w * 0.1,
           ),
-          DesignProcessCard(
+          ProjectsCard(
             w: w,
+            title: "GharTak Food Delivery App",
             description:
-                'Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.',
-            title: 'Strategy',
+                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
           ),
           SizedBox(
             height: w * 0.1,
           ),
-          DesignProcessCard(
+          ProjectsCard(
             w: w,
+            title: "GharTak Food Delivery App",
             description:
-                'After the end of this phase you will have pixel perfect designs for your mobile/ web application. Stimulating interactions, robust design systems, I have done it all for my various freelance clients before.',
-            title: 'Design',
+                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
           ),
-          SizedBox(
-            height: w * 0.1,
-          ),
-          DesignProcessCard(
-            w: w,
-            description:
-                'Conducting usability tests to ensure the credibility of the solution designed according to the problem statements discovered. Aligning the target audiences feedback with the proposed solution for pragmatic & feedback oriented results.',
-            title: 'Testing',
-          )
         ],
       ),
     );
   }
 }
 
-class DesignProcessCard extends StatelessWidget {
+class ProjectsCard extends StatelessWidget {
   final String title;
   final String description;
-
-  const DesignProcessCard({
+  const ProjectsCard({
     super.key,
     required this.w,
     required this.title,
@@ -109,9 +97,18 @@ class DesignProcessCard extends StatelessWidget {
             color: AppColors.titleTxt,
           ),
         ),
+        SizedBox(
+          height: w * 0.02,
+        ),
+        Container(
+          height: w * 0.5,
+          width: w,
+          color: AppColors.primary,
+        ),
         SizedBox(height: w * 0.02),
         Text(
           description,
+          textAlign: TextAlign.justify,
           style: TextStyle(
             fontSize: w * 0.034,
             height: 1.8,

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'pages/aboutMeSection/about_me_section.dart';
 import 'pages/heroSection/hero_section.dart';
 import 'pages/navBarSection/nav_bar_section.dart';
 import 'pages/workFlowSection/workflow_section.dart';
+import 'portfolioSection/portfolio_section.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -18,21 +20,25 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          ListView(
-            scrollDirection: Axis.vertical,
-            controller: _scrollController,
-            children: const [
-              HeroSection(),
-              WorkFlowSection()
-            ],
-          ),
-          NavBarSection(
-            scrollController: _scrollController,
-          ),
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            ListView(
+              scrollDirection: Axis.vertical,
+              controller: _scrollController,
+              children: const [
+                HeroSection(),
+                WorkFlowSection(),
+                PortfolioSection(),
+                AboutMeSection(),
+              ],
+            ),
+            NavBarSection(
+              scrollController: _scrollController,
+            ),
+          ],
+        ),
       ),
     );
   }
