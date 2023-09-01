@@ -12,7 +12,7 @@ class NavBarMobileSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: w * 0.04),
       height: w * 0.14,
       width: w,
-      color: AppColors.bgColor2,
+      color: AppColors.bgColor1,
       child: Row(
         children: [
           navBarMobileItem(
@@ -23,9 +23,14 @@ class NavBarMobileSection extends StatelessWidget {
             FontWeight.bold,
           ),
           const Spacer(),
-          Icon(
-            Icons.menu,
-            color: AppColors.bgWhite1,
+          InkWell(
+            onTap: () {
+              Scaffold.of(context).openDrawer();
+            },
+            child: Icon(
+              Icons.menu,
+              color: AppColors.bgWhite1,
+            ),
           )
         ],
       ),

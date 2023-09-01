@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'pages/aboutMeSection/about_me_section.dart';
+import 'pages/footerSection/footer_section.dart';
 import 'pages/heroSection/hero_section.dart';
 import 'pages/navBarSection/nav_bar_section.dart';
 import 'pages/workFlowSection/workflow_section.dart';
@@ -22,6 +23,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        
         body: Stack(
           children: [
             ListView(
@@ -32,6 +34,7 @@ class _LandingPageState extends State<LandingPage> {
                 WorkFlowSection(),
                 PortfolioSection(),
                 AboutMeSection(),
+                FooterSection(),
               ],
             ),
             NavBarSection(
