@@ -42,7 +42,7 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
             ),
           ),
           SizedBox(height: w * 0.06),
-          ProjectsCard(
+          ProjectsCardMobile(
             w: w,
             title: "GharTak Food Delivery App",
             description:
@@ -51,7 +51,7 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
           SizedBox(
             height: w * 0.1,
           ),
-          ProjectsCard(
+          ProjectsCardMobile(
             w: w,
             title: "GharTak Food Delivery App",
             description:
@@ -60,7 +60,7 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
           SizedBox(
             height: w * 0.1,
           ),
-          ProjectsCard(
+          ProjectsCardMobile(
             w: w,
             title: "GharTak Food Delivery App",
             description:
@@ -72,10 +72,10 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
   }
 }
 
-class ProjectsCard extends StatelessWidget {
+class ProjectsCardMobile extends StatelessWidget {
   final String title;
   final String description;
-  const ProjectsCard({
+  const ProjectsCardMobile({
     super.key,
     required this.w,
     required this.title,
