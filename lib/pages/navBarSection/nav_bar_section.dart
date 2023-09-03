@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/utils/constants.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'nav_bar_desktop_section.dart';
@@ -12,8 +13,9 @@ class NavBarSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    w = MediaQuery.of(context).size.width;
     return ScreenTypeLayout.builder(
-      desktop: (p0) => NavBarDesktopSection(
+      desktop: (BuildContext context) => NavBarDesktopSection(
         scrollController: scrollController,
       ),
       mobile: (p0) => const NavBarMobileSection(),

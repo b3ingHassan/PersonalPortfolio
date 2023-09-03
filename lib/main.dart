@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Personal Portdolio',
       theme: ThemeData(
         fontFamily: "Poppins",
-        primaryColor: AppColors.primary,
+        primaryColor: AppColors.bgColor1,
       ),
-      debugShowCheckedModeBanner: false,
-      title: 'Material App',
       home: const LandingPage(),
     );
   }

@@ -4,9 +4,14 @@ import 'package:responsive_builder/responsive_builder.dart';
 
 import 'hero_mobile_section.dart';
 
-class HeroSection extends StatelessWidget {
+class HeroSection extends StatefulWidget {
   const HeroSection({super.key});
 
+  @override
+  State<HeroSection> createState() => _HeroSectionState();
+}
+
+class _HeroSectionState extends State<HeroSection> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
@@ -17,14 +22,9 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-class HeroDesktopSection extends StatefulWidget {
+class HeroDesktopSection extends StatelessWidget {
   const HeroDesktopSection({super.key});
 
-  @override
-  State<HeroDesktopSection> createState() => _HeroDesktopSectionState();
-}
-
-class _HeroDesktopSectionState extends State<HeroDesktopSection> {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -94,6 +94,8 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                           Icon(
                             Icons.download,
                             color: AppColors.primary,
+                    size: w*0.014
+
                           ),
                           SizedBox(
                             width: w * 0.004,

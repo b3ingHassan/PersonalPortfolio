@@ -23,7 +23,7 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        
+        backgroundColor: const Color(0xff130E32),
         body: Stack(
           children: [
             ListView(

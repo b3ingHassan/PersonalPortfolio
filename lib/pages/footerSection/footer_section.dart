@@ -5,9 +5,14 @@ import 'footer_desktop_section.dart';
 import 'footer_mobile_section.dart';
 import 'footer_tablet_section.dart';
 
-class FooterSection extends StatelessWidget {
+class FooterSection extends StatefulWidget {
   const FooterSection({super.key});
 
+  @override
+  State<FooterSection> createState() => _FooterSectionState();
+}
+
+class _FooterSectionState extends State<FooterSection> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(

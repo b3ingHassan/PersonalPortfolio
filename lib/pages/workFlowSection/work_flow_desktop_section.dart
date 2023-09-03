@@ -65,7 +65,7 @@ class _WorkFlowDesktopSectionState extends State<WorkFlowDesktopSection> {
             ],
           ),
           SizedBox(
-            height: w * 0.04,
+            height: w * 0.08,
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,

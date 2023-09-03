@@ -8,13 +8,13 @@ class NavBarDesktopSection extends StatelessWidget {
 
   const NavBarDesktopSection({super.key, required this.scrollController});
   void scrollToSection(int index) {
-    double sectionHeight = w! * 0.5; // Replace with the actual section height
+    double sectionHeight = w! * 0.55; // Replace with the actual section height
 
     double offset = index * sectionHeight;
 
     scrollController.animateTo(
       offset,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 800),
       curve: Curves.easeInOut,
     );
   }
@@ -30,72 +30,72 @@ class NavBarDesktopSection extends StatelessWidget {
       color: AppColors.bgColor2,
       child: Row(
         children: [
-          navBarDesktopItem(w, AppColors.bgWhite1, "b3ingHassan",
-              () => scrollToSection(0), w * 0.014, FontWeight.bold),
+          InkWell(
+            onTap: () => scrollToSection(0),
+            child: Text(
+              "b3ingHassan",
+              style: TextStyle(
+                color: AppColors.bgWhite1,
+                fontSize: w * 0.014,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
           const Spacer(),
-          navBarDesktopItem(
-            w,
-            AppColors.bgWhite1,
-            "Work Flow",
-            () => scrollToSection(1),
-            w * 0.008,
-            FontWeight.normal,
+          InkWell(
+            onTap: () => scrollToSection(1),
+            child: Text(
+              "Work Flow",
+              style: TextStyle(
+                color: AppColors.bgWhite1,
+                fontSize: w * 0.008,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
           ),
           SizedBox(
             width: w * 0.04,
           ),
-          navBarDesktopItem(
-            w,
-            AppColors.bgWhite1,
-            "Portfolio",
-            () => scrollToSection(1),
-            w * 0.008,
-            FontWeight.normal,
+          InkWell(
+            onTap: () => scrollToSection(2),
+            child: Text(
+              "Portfolio",
+              style: TextStyle(
+                color: AppColors.bgWhite1,
+                fontSize: w * 0.008,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
           ),
           SizedBox(
             width: w * 0.04,
           ),
-          navBarDesktopItem(
-            w,
-            AppColors.bgWhite1,
-            "About Me",
-            () => scrollToSection(1),
-            w * 0.008,
-            FontWeight.normal,
+          InkWell(
+            onTap: () => scrollToSection(3),
+            child: Text(
+              "About Me",
+              style: TextStyle(
+                color: AppColors.bgWhite1,
+                fontSize: w * 0.008,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
           ),
           SizedBox(
             width: w * 0.04,
           ),
-          navBarDesktopItem(
-            w,
-            AppColors.bgWhite1,
-            "Contact Me",
-            () => scrollToSection(1),
-            w * 0.008,
-            FontWeight.normal,
+          InkWell(
+            onTap: () => scrollToSection(4),
+            child: Text(
+              "Contact Me",
+              style: TextStyle(
+                color: AppColors.bgWhite1,
+                fontSize: w * 0.008,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
           ),
         ],
-      ),
-    );
-  }
-
-  InkWell navBarDesktopItem(
-    double w,
-    Color color,
-    String txt,
-    void Function() onTap,
-    double fsize,
-    FontWeight fontWeight,
-  ) {
-    return InkWell(
-      onTap: onTap,
-      child: Text(
-        txt,
-        style: TextStyle(
-          color: color,
-          fontSize: fsize,
-          fontWeight: fontWeight,
-        ),
       ),
     );
   }

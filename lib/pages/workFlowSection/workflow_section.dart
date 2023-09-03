@@ -5,9 +5,14 @@ import 'work_flow_desktop_section.dart';
 import 'work_flow_mobile_section.dart';
 import 'work_flow_tablet_section.dart';
 
-class WorkFlowSection extends StatelessWidget {
+class WorkFlowSection extends StatefulWidget {
   const WorkFlowSection({super.key});
 
+  @override
+  State<WorkFlowSection> createState() => _WorkFlowSectionState();
+}
+
+class _WorkFlowSectionState extends State<WorkFlowSection> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(

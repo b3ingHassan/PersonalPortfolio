@@ -5,9 +5,14 @@ import 'portfolio_desktop_section.dart';
 import 'portfolio_mobile_section.dart';
 import 'portfolio_tablet_section.dart';
 
-class PortfolioSection extends StatelessWidget {
+class PortfolioSection extends StatefulWidget {
   const PortfolioSection({super.key});
 
+  @override
+  State<PortfolioSection> createState() => _PortfolioSectionState();
+}
+
+class _PortfolioSectionState extends State<PortfolioSection> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
