@@ -15,12 +15,11 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
 
     return Container(
       color: AppColors.bgWhite1,
-      padding: EdgeInsets.only(
-        left: w*0.1
-      ),
+      padding: EdgeInsets.only(left: w * 0.1),
       height: w * 0.54,
       width: w,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: Column(
@@ -111,12 +110,13 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(
-                image: const DecorationImage(
-                  image: AssetImage("assets/images/profilepic.jpg"),
-                  fit: BoxFit.cover,
+              padding: EdgeInsets.only(right: w * 0.1),
+              child: Center(
+                child: Image.asset(
+                  "assets/images/aboutme.png",
+                  height: w * 0.34,
+                  fit: BoxFit.contain,
                 ),
-                color: AppColors.bgColor1,
               ),
             ),
           )

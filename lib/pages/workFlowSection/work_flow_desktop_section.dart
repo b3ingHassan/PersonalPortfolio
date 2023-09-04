@@ -122,7 +122,7 @@ class CustomWorkFlowDesktop extends StatelessWidget {
             description,
             style: TextStyle(
               fontSize: w * 0.011,
-              height: 1.8,
+              height: 1.6,
               fontWeight: FontWeight.normal,
               color: AppColors.subtitleTxt2,
             ),

@@ -72,42 +72,43 @@ class ProjectCardDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: w * 0.256,
-          height: w * 0.18,
-          color: AppColors.bgWhite2,
-        ),
-        SizedBox(
-          height: w * 0.01,
-        ),
-        Text(
-          "GharTak - Food Delivery App",
-          style: TextStyle(
-            fontSize: w * 0.012,
-            fontWeight: FontWeight.w500,
-            color: AppColors.titleTxt,
+    return SizedBox(
+      width: w * 0.24,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: w * 0.256,
+            height: w * 0.18,
+            color: AppColors.bgWhite2,
           ),
-        ),
-        SizedBox(
-          height: w * 0.004,
-        ),
-        SizedBox(
-          width: w * 0.24,
-          child: Text(
-            "Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.",
-            textAlign: TextAlign.justify,
+          SizedBox(
+            height: w * 0.01,
+          ),
+          Text(
+            "GharTak - Food Delivery App",
             style: TextStyle(
-              fontSize: w * 0.011,
-              height: 1.8,
-              fontWeight: FontWeight.normal,
-              color: AppColors.subtitleTxt2,
+              fontSize: w * 0.012,
+              fontWeight: FontWeight.w500,
+              color: AppColors.titleTxt,
             ),
           ),
-        ),
-      ],
+          SizedBox(
+            height: w * 0.004,
+          ),
+          SizedBox(
+            child: Text(
+              "Effortless dining starts here. Browse diverse menus, order with a tap, and savor restaurant-quality meals delivered to your door. Elevate your food experience with our app today.",
+              style: TextStyle(
+                fontSize: w * 0.011,
+                height: 1.8,
+                fontWeight: FontWeight.normal,
+                color: AppColors.subtitleTxt1,
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

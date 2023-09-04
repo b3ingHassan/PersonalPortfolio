@@ -14,7 +14,7 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
     double w = MediaQuery.of(context).size.width;
 
     return Container(
-      height: w * 0.55,
+      height: w * 0.5,
       width: w,
       padding: EdgeInsets.only(top: w * 0.06),
       color: AppColors.bgColor2,
@@ -25,7 +25,7 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
           Text(
             "GET IN TOUCH",
             style: TextStyle(
-              fontSize: w * 0.016,
+              fontSize: w * 0.012,
               color: AppColors.subtitleTxt1,
               letterSpacing: 1.2,
               fontWeight: FontWeight.normal,
@@ -37,7 +37,7 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
           Text(
             "Let's Connect!",
             style: TextStyle(
-              fontSize: w * 0.048,
+              fontSize: w * 0.024,
               color: AppColors.accent,
               fontWeight: FontWeight.bold,
             ),
@@ -49,7 +49,7 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
             "Have a project or opportunity in mind? Let's have a\nnice chat over it. Contact me here or email me at",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: w * 0.02,
+              fontSize: w * 0.012,
               color: AppColors.subtitleTxt1,
               fontWeight: FontWeight.normal,
             ),
@@ -86,7 +86,7 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
                     style: TextStyle(
                       fontSize: w * 0.01,
                       color: AppColors.bgWhite1,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.normal,
                     ),
                   ),
                 ],
