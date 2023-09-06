@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.7.0
   firebase_core: ^2.15.1
+  firebase_storage: ^11.2.6
+  url_launcher: ^6.1.14
+  file_saver: ^0.2.8
 
 
 dev_dependencies:

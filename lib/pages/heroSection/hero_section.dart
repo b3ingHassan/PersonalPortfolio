@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_portfolio/utils/colors.dart';
+import 'package:personal_portfolio/pages/heroSection/hero_tablet_section.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'hero_desktop_section.dart';
@@ -20,19 +20,5 @@ class _HeroSectionState extends State<HeroSection> {
       mobile: (p0) => const HeroMobileSection(),
       tablet: (p0) => const HeroTabletSection(),
     );
-  }
-}
-
-class HeroTabletSection extends StatefulWidget {
-  const HeroTabletSection({super.key});
-
-  @override
-  State<HeroTabletSection> createState() => _HeroTabletSectionState();
-}
-
-class _HeroTabletSectionState extends State<HeroTabletSection> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }

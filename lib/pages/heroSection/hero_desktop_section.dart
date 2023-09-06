@@ -1,3 +1,4 @@
+import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
@@ -9,6 +10,15 @@ class HeroDesktopSection extends StatefulWidget {
 }
 
 class _HeroDesktopSectionState extends State<HeroDesktopSection> {
+  void downloadPDF() async {
+    FileSaver.instance.saveFile(
+      name: 'Resume',
+      link: LinkDetails(
+          link:
+              'https://firebasestorage.googleapis.com/v0/b/personal-portfolio-9d6d5.appspot.com/o/pdfs%2Fpdfs%2Fpdf1.pdf?alt=media&token=0d83c3be-f9af-4053-b517-3fededf8beca'),
+    );
+  }
+
   bool isHovered = false;
   @override
   Widget build(BuildContext context) {
@@ -73,35 +83,46 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                         isHovered = false;
                       });
                     },
-                    child: Container(
-                      height: w * 0.034,
-                      width: w * 0.12,
-                      decoration: BoxDecoration(
-                        border:
-                            Border.all(color: AppColors.primary, width: 1.2),
-                        borderRadius: BorderRadius.circular(4),
-                        color:
-                            isHovered ? AppColors.primary : AppColors.bgWhite1,
-                      ),
-                      child: Center(
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.download,
-                                color:isHovered? AppColors.bgWhite1:AppColors.primary, size: w * 0.014),
-                            SizedBox(
-                              width: w * 0.004,
-                            ),
-                            Text(
-                              "Resume",
-                              style: TextStyle(
-                                fontSize: w * 0.01,
-                                color:isHovered? AppColors.bgWhite1:AppColors.primary,
-                                fontWeight: FontWeight.w500,
+                    child: InkWell(
+                      onTap: () {
+                        downloadPDF();
+                      },
+                      child: Container(
+                        height: w * 0.034,
+                        width: w * 0.12,
+                        decoration: BoxDecoration(
+                          border:
+                              Border.all(color: AppColors.primary, width: 1.2),
+                          borderRadius: BorderRadius.circular(4),
+                          color: isHovered
+                              ? AppColors.primary
+                              : AppColors.bgWhite1,
+                        ),
+                        child: Center(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.download,
+                                  color: isHovered
+                                      ? AppColors.bgWhite1
+                                      : AppColors.primary,
+                                  size: w * 0.014),
+                              SizedBox(
+                                width: w * 0.004,
                               ),
-                            ),
-                          ],
+                              Text(
+                                "Resume",
+                                style: TextStyle(
+                                  fontSize: w * 0.01,
+                                  color: isHovered
+                                      ? AppColors.bgWhite1
+                                      : AppColors.primary,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),
