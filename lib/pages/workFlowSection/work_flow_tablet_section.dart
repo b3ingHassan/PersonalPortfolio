@@ -46,8 +46,16 @@ class _WorkFlowTabletSectionState extends State<WorkFlowTabletSection> {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TabletCustomWorkFlow(),
-              TabletCustomWorkFlow(),
+              TabletCustomWorkFlow(
+                description:
+                    'This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements.',
+                title: 'Research',
+              ),
+              TabletCustomWorkFlow(
+                description:
+                    'Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial. ',
+                title: 'Strategy',
+              ),
             ],
           ),
           SizedBox(
@@ -56,8 +64,15 @@ class _WorkFlowTabletSectionState extends State<WorkFlowTabletSection> {
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TabletCustomWorkFlow(),
-              TabletCustomWorkFlow(),
+              TabletCustomWorkFlow(
+                description:
+                    'After the end of this phase you will have pixel perfect designs for your mobile/ web application. Stimulating interactions, robust design systems, I have done it all for my various freelance clients before. ',
+                title: 'Design',
+              ),
+              TabletCustomWorkFlow(
+                  title: "Testing",
+                  description:
+                      "Conducting usability tests to ensure the credibility of the solution designed according to the problem statements discovered. Aligning the target audiences feedback with the proposed solution for pragmatic & feedback oriented results.")
             ],
           )
         ],
@@ -69,8 +84,11 @@ class _WorkFlowTabletSectionState extends State<WorkFlowTabletSection> {
 class TabletCustomWorkFlow extends StatelessWidget {
   const TabletCustomWorkFlow({
     super.key,
+    required this.title,
+    required this.description,
   });
-
+  final String title;
+  final String description;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -82,7 +100,7 @@ class TabletCustomWorkFlow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "Research",
+            title,
             style: TextStyle(
               fontSize: w * 0.025,
               fontWeight: FontWeight.w500,
@@ -92,10 +110,10 @@ class TabletCustomWorkFlow extends StatelessWidget {
             height: w * 0.008,
           ),
           Text(
-            "This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements.",
+            description,
             textAlign: TextAlign.justify,
             style: TextStyle(
-              fontSize: w! * 0.018,
+              fontSize: w * 0.018,
               height: 1.8,
               fontWeight: FontWeight.normal,
               color: AppColors.subtitleTxt2,

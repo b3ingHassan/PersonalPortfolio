@@ -104,6 +104,10 @@ class ProjectsCardMobile extends StatelessWidget {
           height: w * 0.5,
           width: w,
           color: AppColors.primary,
+          child: Image.asset(
+              "assets/images/studioapp.png", // Path to the asset image
+              fit: BoxFit.cover, // You can adjust the fit as per your requirement
+            ),
         ),
         SizedBox(height: w * 0.02),
         Text(

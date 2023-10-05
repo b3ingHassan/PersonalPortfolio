@@ -51,9 +51,27 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ProjectCardDesktop(w: w),
-              ProjectCardDesktop(w: w),
-              ProjectCardDesktop(w: w),
+              ProjectCardDesktop(
+                w: w,
+                description:
+                    'Developed a mobile app enabling seamless studio bookings for artists. Led UI UX design, enhancing user experience. Implemented real-time notifications and interactive studio profiles. Demonstrated expertise in mobile app development and user-centric design principles.',
+                img: 'assets/images/studioapp.png',
+                title: 'Studio Booking App',
+              ),
+              ProjectCardDesktop(
+                w: w,
+                description:
+                    "Designed user-friendly food delivery app with intuitive interface, based on thorough user research. Collaborated closely with developers for seamless integration. Positive user feedback validated the app's effectiveness and accessibility.",
+                img: 'assets/images/ghartak.png',
+                title: 'GharTak Food Delivery App',
+              ),
+              ProjectCardDesktop(
+                w: w,
+                description:
+                    'Developed a mobile app enabling seamless studio bookings for artists. Led UI UX design, enhancing user experience. Implemented real-time notifications and interactive studio profiles. Demonstrated expertise in mobile app development and user-centric design principles.',
+                img: 'assets/images/project1.png',
+                title: 'Studio Booking App',
+              ),
             ],
           )
         ],
@@ -66,9 +84,16 @@ class ProjectCardDesktop extends StatelessWidget {
   const ProjectCardDesktop({
     super.key,
     required this.w,
+    required this.img,
+    required this.title,
+    required this.description,
   });
 
   final double w;
+  final String img;
+
+  final String title;
+  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -81,12 +106,17 @@ class ProjectCardDesktop extends StatelessWidget {
             width: w * 0.256,
             height: w * 0.18,
             color: AppColors.bgWhite2,
+            child: Image.asset(
+              img, // Path to the asset image
+              fit: BoxFit
+                  .contain, // You can adjust the fit as per your requirement
+            ),
           ),
           SizedBox(
             height: w * 0.01,
           ),
           Text(
-            "GharTak - Food Delivery App",
+            title,
             style: TextStyle(
               fontSize: w * 0.012,
               fontWeight: FontWeight.w500,
@@ -98,7 +128,7 @@ class ProjectCardDesktop extends StatelessWidget {
           ),
           SizedBox(
             child: Text(
-              "Effortless dining starts here. Browse diverse menus, order with a tap, and savor restaurant-quality meals delivered to your door. Elevate your food experience with our app today.",
+              description,
               style: TextStyle(
                 fontSize: w * 0.011,
                 height: 1.8,

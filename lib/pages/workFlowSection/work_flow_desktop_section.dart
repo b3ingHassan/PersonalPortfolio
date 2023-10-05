@@ -50,10 +50,9 @@ class _WorkFlowDesktopSectionState extends State<WorkFlowDesktopSection> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomWorkFlowDesktop(
-                title: "Research",
-                description:
-                    "This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements.",
-              ),
+                  title: "Research",
+                  description:
+                      "This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements."),
               SizedBox(
                 width: w * 0.08,
               ),
@@ -71,18 +70,16 @@ class _WorkFlowDesktopSectionState extends State<WorkFlowDesktopSection> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const CustomWorkFlowDesktop(
-                title: "Research",
-                description:
-                    "This is how everything starts. Gathering information about the project to understand the problem space and identitfying the pain points to outline the scope and better identify the requirements.",
-              ),
+                  title: "Design",
+                  description:
+                      "After the end of this phase you will have pixel perfect designs for your mobile/ web application. Stimulating interactions, robust design systems, I have done it all for my various freelance clients before."),
               SizedBox(
                 width: w * 0.08,
               ),
               const CustomWorkFlowDesktop(
-                title: "Strategy",
-                description:
-                    "Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.",
-              ),
+                  title: "Testing",
+                  description:
+                      "Conducting usability tests to ensure the credibility of the solution designed according to the problem statements discovered. Aligning the target audiences feedback with the proposed solution for pragmatic & feedback oriented results."),
             ],
           ),
         ],
