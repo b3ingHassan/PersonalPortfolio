@@ -15,7 +15,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
       name: 'Resume',
       link: LinkDetails(
           link:
-              'https://firebasestorage.googleapis.com/v0/b/personal-portfolio-9d6d5.appspot.com/o/pdfs%2Fpdfs%2Fpdf1.pdf?alt=media&token=0d83c3be-f9af-4053-b517-3fededf8beca'),
+              'https://firebasestorage.googleapis.com/v0/b/crud-5e55f.appspot.com/o/HassanMomin.pdf?alt=media&token=ea65fde9-d63e-43a6-b29f-3f44fd477ba3'),
     );
   }
 
