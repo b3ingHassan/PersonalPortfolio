@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class HeroMobileSection extends StatefulWidget {
@@ -56,21 +58,27 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          Container(
-            height: w * 0.08,
-            width: w * 0.4,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  4,
-                ),
-                color: AppColors.primary),
-            child: Center(
-              child: Text(
-                "Downlaod Resume",
-                style: TextStyle(
-                  fontSize: w * 0.028,
-                  color: AppColors.bgWhite1,
-                  fontWeight: FontWeight.normal,
+          GestureDetector(
+            onTap: () {
+                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
+              
+            },
+            child: Container(
+              height: w * 0.08,
+              width: w * 0.4,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    4,
+                  ),
+                  color: AppColors.primary),
+              child: Center(
+                child: Text(
+                  "Downlaod Resume",
+                  style: TextStyle(
+                    fontSize: w * 0.028,
+                    color: AppColors.bgWhite1,
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ),
             ),

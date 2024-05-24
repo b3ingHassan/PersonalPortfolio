@@ -1,5 +1,6 @@
-import 'package:file_saver/file_saver.dart';
+import 'dart:html'as html;
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class HeroDesktopSection extends StatefulWidget {
@@ -10,14 +11,7 @@ class HeroDesktopSection extends StatefulWidget {
 }
 
 class _HeroDesktopSectionState extends State<HeroDesktopSection> {
-  void downloadPDF() async {
-    FileSaver.instance.saveFile(
-      name: 'Resume',
-      link: LinkDetails(
-          link:
-              'https://firebasestorage.googleapis.com/v0/b/crud-5e55f.appspot.com/o/HassanMomin.pdf?alt=media&token=ea65fde9-d63e-43a6-b29f-3f44fd477ba3'),
-    );
-  }
+ 
 
   bool isHovered = false;
   @override
@@ -85,7 +79,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                     },
                     child: InkWell(
                       onTap: () {
-                        downloadPDF();
+                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
                       },
                       child: Container(
                         height: w * 0.034,

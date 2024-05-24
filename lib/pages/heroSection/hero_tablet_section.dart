@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class HeroTabletSection extends StatefulWidget {
@@ -56,39 +58,45 @@ class _HeroTabletSectionState extends State<HeroTabletSection> {
           SizedBox(
             height: w * 0.024,
           ),
-          Container(
-            height: w * 0.058,
-            width: w * 0.2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
-              border: Border.all(
-                color: AppColors.primary,
-                width: 1.2,
-              ),
-              color: AppColors.bgWhite1,
-            ),
-            child: Center(
-                child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(
-                  Icons.download,
+          GestureDetector(
+            onTap: () {
+                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
+              
+            },
+            child: Container(
+              height: w * 0.058,
+              width: w * 0.2,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                border: Border.all(
                   color: AppColors.primary,
+                  width: 1.2,
                 ),
-                SizedBox(
-                  width: w * 0.008,
-                ),
-                Text(
-                  "Resume",
-                  style: TextStyle(
-                    fontSize: w * 0.02,
-                    fontWeight: FontWeight.w500,
+                color: AppColors.bgWhite1,
+              ),
+              child: Center(
+                  child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.download,
                     color: AppColors.primary,
                   ),
-                ),
-              ],
-            )),
+                  SizedBox(
+                    width: w * 0.008,
+                  ),
+                  Text(
+                    "Resume",
+                    style: TextStyle(
+                      fontSize: w * 0.02,
+                      fontWeight: FontWeight.w500,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ],
+              )),
+            ),
           )
         ],
       ),
