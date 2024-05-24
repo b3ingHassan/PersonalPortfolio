@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class FooterTabletSection extends StatefulWidget {
@@ -57,35 +59,42 @@ class _FooterTabletSectionState extends State<FooterTabletSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          Container(
-            width: w * 0.34,
-            height: w * 0.058,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4),
-             
-              color: AppColors.primary,
-            ),
-            child: Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.download,
-                    color: AppColors.bgWhite1,
-                  ),
-                  SizedBox(
-                    width: w * 0.008,
-                  ),
-                  Text(
-                    "hassanwm99@gmail.com",
-                    style: TextStyle(
-                      fontSize: w * 0.02,
-                      fontWeight: FontWeight.w500,
+          GestureDetector(
+              onTap: 
+            (){
+              OpenEmail().launchEmail();
+
+            },
+            child: Container(
+              width: w * 0.34,
+              height: w * 0.058,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+               
+                color: AppColors.primary,
+              ),
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.download,
                       color: AppColors.bgWhite1,
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: w * 0.008,
+                    ),
+                    Text(
+                      "hassanwm99@gmail.com",
+                      style: TextStyle(
+                        fontSize: w * 0.02,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.bgWhite1,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )

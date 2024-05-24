@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class FooterMobileSection extends StatefulWidget {
@@ -55,22 +57,30 @@ class _FooterMobileSectionState extends State<FooterMobileSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          Container(
-            height: w * 0.08,
-            width: w * 0.42,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                4,
+          GestureDetector(
+            onTap: 
+            (){
+              OpenEmail().launchEmail();
+
+            }
+            ,
+            child: Container(
+              height: w * 0.08,
+              width: w * 0.42,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  4,
+                ),
+                color: AppColors.primary,
               ),
-              color: AppColors.primary,
-            ),
-            child: Center(
-              child: Text(
-                "hassanwm99@gmail.com",
-                style: TextStyle(
-                  fontSize: w * 0.028,
-                  color: AppColors.bgWhite1,
-                  fontWeight: FontWeight.normal,
+              child: Center(
+                child: Text(
+                  "hassanwm99@gmail.com",
+                  style: TextStyle(
+                    fontSize: w * 0.028,
+                    color: AppColors.bgWhite1,
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ),
             ),

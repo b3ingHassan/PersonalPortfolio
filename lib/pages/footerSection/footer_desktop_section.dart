@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FooterDesktopSection extends StatefulWidget {
   const FooterDesktopSection({super.key});
@@ -57,39 +60,44 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
           SizedBox(
             height: w * 0.018,
           ),
-          Container(
-            height: w * 0.034,
-            width: w * 0.18,
-            decoration: BoxDecoration(
-              border: Border.all(
+          GestureDetector(
+            onTap: (){
+              OpenEmail().launchEmail();
+            },
+            child: Container(
+              height: w * 0.034,
+              width: w * 0.18,
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: AppColors.primary,
+                  width: 1.2,
+                ),
+                borderRadius: BorderRadius.circular(4),
                 color: AppColors.primary,
-                width: 1.2,
               ),
-              borderRadius: BorderRadius.circular(4),
-              color: AppColors.primary,
-            ),
-            child: Center(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.email,
-                    color: AppColors.bgWhite1,
-                    size: w*0.014
-                  ),
-                  SizedBox(
-                    width: w * 0.004,
-                  ),
-                  Text(
-                    "hassanwm99@gmail.com",
-                    style: TextStyle(
-                      fontSize: w * 0.01,
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.email,
                       color: AppColors.bgWhite1,
-                      fontWeight: FontWeight.normal,
+                      size: w*0.014
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: w * 0.004,
+                    ),
+                    Text(
+                      "hassanwm99@gmail.com",
+                      style: TextStyle(
+                        fontSize: w * 0.01,
+                        color: AppColors.bgWhite1,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
