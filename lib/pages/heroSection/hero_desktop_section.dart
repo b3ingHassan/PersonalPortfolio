@@ -79,7 +79,8 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                     },
                     child: InkWell(
                       onTap: () {
-                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
+              ResumeDownload().downloadPDF("assets/HassanMomin.pdf");
+       
                       },
                       child: Container(
                         height: w * 0.034,

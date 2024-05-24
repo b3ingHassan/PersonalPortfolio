@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
-
+import 'download_pdf.dart';
 class HeroTabletSection extends StatefulWidget {
   const HeroTabletSection({super.key});
 
@@ -60,8 +58,7 @@ class _HeroTabletSectionState extends State<HeroTabletSection> {
           ),
           GestureDetector(
             onTap: () {
-                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
-              
+              ResumeDownload().downloadPDF("assets/HassanMomin.pdf");
             },
             child: Container(
               height: w * 0.058,

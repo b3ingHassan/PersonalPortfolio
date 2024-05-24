@@ -60,8 +60,7 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
           ),
           GestureDetector(
             onTap: () {
-                       ResumeDownlaod().downladPDF("/lib/HassanMomin.pdf");
-              
+              ResumeDownload().downloadPDF("assets/HassanMomin.pdf");
             },
             child: Container(
               height: w * 0.08,
