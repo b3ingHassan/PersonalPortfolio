@@ -1,9 +1,8 @@
 import 'dart:html' as html;
 
-class ResumeDownload {
-  void downloadPDF(String url) {
-    final html.AnchorElement anchorElement = html.AnchorElement(href: url)
-      ..setAttribute('download', 'HassanMomin.pdf')
-      ..click();
-  }
+void downloadPDFFromGoogleDrive() {
+  // Replace 'YOUR_GOOGLE_DRIVE_LINK' with the actual link to your PDF file on Google Drive
+
+  // Open the PDF file in a new tab
+  html.window.open("assets/HassanMomin.pdf", 'HassanMomin.pdf');
 }

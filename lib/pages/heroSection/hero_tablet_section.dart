@@ -58,7 +58,7 @@ class _HeroTabletSectionState extends State<HeroTabletSection> {
           ),
           GestureDetector(
             onTap: () {
-              ResumeDownload().downloadPDF("assets/HassanMomin.pdf");
+              downloadPDFFromGoogleDrive();
             },
             child: Container(
               height: w * 0.058,
