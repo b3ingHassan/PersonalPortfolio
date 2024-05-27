@@ -12,7 +12,6 @@ class OpenEmail {
     await launch(emailUri.toString());
   } else {
     // Handle the error if the email app cannot be launched
-    print('Could not launch email app');
   }
 }
 }

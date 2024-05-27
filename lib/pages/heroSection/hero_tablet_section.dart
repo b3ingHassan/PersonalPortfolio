@@ -58,7 +58,7 @@ class _HeroTabletSectionState extends State<HeroTabletSection> {
           ),
           GestureDetector(
             onTap: () {
-              downloadPDFFromGoogleDrive();
+             openPDF();
             },
             child: Container(
               height: w * 0.058,

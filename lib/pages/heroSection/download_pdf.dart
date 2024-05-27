@@ -1,8 +1,9 @@
-import 'dart:html' as html;
-
-void downloadPDFFromGoogleDrive() {
-  // Replace 'YOUR_GOOGLE_DRIVE_LINK' with the actual link to your PDF file on Google Drive
-
-  // Open the PDF file in a new tab
-  html.window.open("assets/HassanMomin.pdf", 'HassanMomin.pdf');
-}
+ import 'package:url_launcher/url_launcher.dart';
+ void openPDF() async {
+    const pdfFile = 'https://drive.google.com/file/d/1Go_0ewx3Ld8bpewaERsT940zSl7Rxkne/view?usp=sharing';
+    if (await canLaunch(pdfFile)) {
+      await launch(pdfFile);
+    } else {
+      throw 'Could not launch $pdfFile';
+    }
+  }

@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/utils/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioDesktopSection extends StatefulWidget {
   const PortfolioDesktopSection({super.key});
@@ -57,6 +60,7 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
                     'Developed a mobile app enabling seamless studio bookings for artists. Led UI UX design, enhancing user experience. Implemented real-time notifications and interactive studio profiles. Demonstrated expertise in mobile app development and user-centric design principles.',
                 img: 'assets/images/studioapp.png',
                 title: 'Studio Booking App',
+                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
               ),
               ProjectCardDesktop(
                 w: w,
@@ -64,16 +68,18 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
                     "Designed user-friendly food delivery app with intuitive interface, based on thorough user research. Collaborated closely with developers for seamless integration. Positive user feedback validated the app's effectiveness and accessibility.",
                 img: 'assets/images/ghartak.png',
                 title: 'GharTak Food Delivery App',
+                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
               ),
               ProjectCardDesktop(
                 w: w,
                 description:
-                    'Developed a mobile app enabling seamless studio bookings for artists. Led UI UX design, enhancing user experience. Implemented real-time notifications and interactive studio profiles. Demonstrated expertise in mobile app development and user-centric design principles.',
+                    'Created a responsive web application for managing tasks, with real-time collaboration features. Utilized modern web technologies and ensured cross-browser compatibility. This project highlights my web development skills and ability to work on complex, interactive applications.',
                 img: 'assets/images/project1.png',
-                title: 'Studio Booking App',
+                title: 'Task Management Web App',
+                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
               ),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -81,19 +87,28 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
 }
 
 class ProjectCardDesktop extends StatelessWidget {
+  final double w;
+  final String img;
+  final String title;
+  final String description;
+  final String link;
+
   const ProjectCardDesktop({
     super.key,
     required this.w,
     required this.img,
     required this.title,
     required this.description,
+    required this.link,
   });
 
-  final double w;
-  final String img;
-
-  final String title;
-  final String description;
+  void launchFigmaLink() async {
+    if (await canLaunch(link)) {
+      await launch(link);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,21 +122,38 @@ class ProjectCardDesktop extends StatelessWidget {
             height: w * 0.18,
             color: AppColors.bgWhite2,
             child: Image.asset(
-              img, // Path to the asset image
-              fit: BoxFit
-                  .contain, // You can adjust the fit as per your requirement
+              img,
+              fit: BoxFit.contain,
             ),
           ),
           SizedBox(
             height: w * 0.01,
           ),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: w * 0.012,
-              fontWeight: FontWeight.w500,
-              color: AppColors.titleTxt,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  fontSize: w * 0.012,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.titleTxt,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  launchFigmaLink();
+                },
+                child: Text(
+                  "Link",
+                  style: TextStyle(
+                    fontSize: w * 0.012,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.blue  ,
+                  ),
+                ),
+              ),
+            ],
           ),
           SizedBox(
             height: w * 0.004,

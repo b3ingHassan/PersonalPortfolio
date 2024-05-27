@@ -60,7 +60,7 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
           ),
           GestureDetector(
             onTap: () {
-           downloadPDFFromGoogleDrive();
+      openPDF();
             },
             child: Container(
               height: w * 0.08,

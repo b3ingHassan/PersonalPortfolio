@@ -1,4 +1,3 @@
-import 'dart:html'as html;
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
@@ -79,7 +78,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                     },
                     child: InkWell(
                       onTap: () {
-              downloadPDFFromGoogleDrive();
+              openPDF();
        
                       },
                       child: Container(

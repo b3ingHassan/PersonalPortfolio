@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class FooterDesktopSection extends StatefulWidget {
   const FooterDesktopSection({super.key});
