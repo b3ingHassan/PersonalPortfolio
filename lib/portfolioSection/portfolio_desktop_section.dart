@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -106,7 +104,9 @@ class ProjectCardDesktop extends StatelessWidget {
   });
 
   void launchFigmaLink() async {
+    // ignore: deprecated_member_use
     if (await canLaunch(link)) {
+      // ignore: deprecated_member_use
       await launch(link);
     } else {
       throw 'Could not launch $link';
@@ -158,7 +158,7 @@ class ProjectCardDesktop extends StatelessWidget {
           SizedBox(
             height: w*0.004,
           ),
-          GestureDetector(
+       InkWell(
            onTap: () {
              launchFigmaLink();
            },

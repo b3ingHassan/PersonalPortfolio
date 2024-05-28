@@ -10,6 +10,7 @@ class FooterDesktopSection extends StatefulWidget {
 }
 
 class _FooterDesktopSectionState extends State<FooterDesktopSection> {
+  bool isHovered = false;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -58,43 +59,54 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
           SizedBox(
             height: w * 0.018,
           ),
-          GestureDetector(
-            onTap: (){
-              OpenEmail().launchEmail();
+          MouseRegion(
+            onEnter: (_) {
+              setState(() {
+                isHovered = true;
+              });
             },
-            child: Container(
+            onExit: (_) {
+              setState(() {
+                isHovered = false;
+              });
+            },
+            child: InkWell(
+              onTap: () {
+                OpenEmail();
+              },
+              child: Container(
               height: w * 0.034,
-              width: w * 0.18,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: AppColors.primary,
-                  width: 1.2,
+                width: w * 0.18,
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppColors.primary, width: 1.2),
+                  borderRadius: BorderRadius.circular(4),
+                  color: isHovered ? AppColors.bgWhite1 : AppColors.primary,
                 ),
-                borderRadius: BorderRadius.circular(4),
-                color: AppColors.primary,
-              ),
-              child: Center(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.email,
-                      color: AppColors.bgWhite1,
-                      size: w*0.014
-                    ),
-                    SizedBox(
-                      width: w * 0.004,
-                    ),
-                    Text(
-                      "hassanwm99@gmail.com",
-                      style: TextStyle(
-                        fontSize: w * 0.01,
-                        color: AppColors.bgWhite1,
-                        fontWeight: FontWeight.normal,
+                child: Center(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.email,
+                          color: isHovered
+                              ? AppColors.primary
+                              : AppColors.bgWhite1,
+                          size: w * 0.014),
+                      SizedBox(
+                        width: w * 0.004,
                       ),
-                    ),
-                  ],
+                      Text(
+                        "hassanwm99@gmail.com",
+                        style: TextStyle(
+                          fontSize: w * 0.01,
+                          color: isHovered
+                              ? AppColors.primary
+                              : AppColors.bgWhite1,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
