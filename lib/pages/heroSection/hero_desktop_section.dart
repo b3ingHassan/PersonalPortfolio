@@ -10,8 +10,6 @@ class HeroDesktopSection extends StatefulWidget {
 }
 
 class _HeroDesktopSectionState extends State<HeroDesktopSection> {
- 
-
   bool isHovered = false;
   @override
   Widget build(BuildContext context) {
@@ -78,8 +76,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                     },
                     child: InkWell(
                       onTap: () {
-              openPDF();
-       
+                        openPDF();
                       },
                       child: Container(
                         height: w * 0.034,

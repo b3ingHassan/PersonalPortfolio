@@ -57,18 +57,20 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
               ProjectCardDesktop(
                 w: w,
                 description:
-                    'Developed a mobile app enabling seamless studio bookings for artists. Led UI UX design, enhancing user experience. Implemented real-time notifications and interactive studio profiles. Demonstrated expertise in mobile app development and user-centric design principles.',
+                    'Designed a user-friendly app for booking AC repair, painting, and car wash services. Streamlined booking process, verified professionals, and easy payments.',
                 img: 'assets/images/studioapp.png',
-                title: 'Studio Booking App',
-                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
+                title: 'ServYou 24',
+                link:
+                    'https://www.figma.com/design/lFFchRCwocFtTcpKOyTRh1/ServYou-24?node-id=6-2&t=9htn36JtR3aFJZJB-1',
               ),
               ProjectCardDesktop(
                 w: w,
                 description:
-                    "Designed user-friendly food delivery app with intuitive interface, based on thorough user research. Collaborated closely with developers for seamless integration. Positive user feedback validated the app's effectiveness and accessibility.",
+                    "Designed a food delivery app enabling orders of multiple dishes from one restaurant. Created an intuitive interface for effortless browsing and ordering.",
                 img: 'assets/images/ghartak.png',
                 title: 'GharTak Food Delivery App',
-                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
+                link:
+                    'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
               ),
               ProjectCardDesktop(
                 w: w,
@@ -76,7 +78,8 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
                     'Created a responsive web application for managing tasks, with real-time collaboration features. Utilized modern web technologies and ensured cross-browser compatibility. This project highlights my web development skills and ability to work on complex, interactive applications.',
                 img: 'assets/images/project1.png',
                 title: 'Task Management Web App',
-                link: 'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
+                link:
+                    'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
               ),
             ],
           ),
@@ -129,32 +132,15 @@ class ProjectCardDesktop extends StatelessWidget {
           SizedBox(
             height: w * 0.01,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                title,
-                style: TextStyle(
-                  fontSize: w * 0.012,
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.titleTxt,
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  launchFigmaLink();
-                },
-                child: Text(
-                  "Link",
-                  style: TextStyle(
-                    fontSize: w * 0.012,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.blue  ,
-                  ),
-                ),
-              ),
-            ],
+          Text(
+            title,
+            style: TextStyle(
+              fontSize: w * 0.012,
+              fontWeight: FontWeight.w600,
+              color: AppColors.titleTxt,
+            ),
           ),
+         
           SizedBox(
             height: w * 0.004,
           ),
@@ -166,6 +152,24 @@ class ProjectCardDesktop extends StatelessWidget {
                 height: 1.8,
                 fontWeight: FontWeight.normal,
                 color: AppColors.subtitleTxt1,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: w*0.004,
+          ),
+          GestureDetector(
+           onTap: () {
+             launchFigmaLink();
+           },
+            child: Text(
+              "Figma Link",
+              style: TextStyle(
+                decoration: TextDecoration.underline,
+                fontSize: w * 0.012,
+                color: AppColors.primary,
+                letterSpacing: 1.2,
+                fontWeight: FontWeight.normal,
               ),
             ),
           ),

@@ -51,7 +51,7 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
                 SizedBox(
                   width: w * 0.3,
                   child: Text(
-                    "Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.",
+                    "As a UI/UX designer with two years of hands-on experience, I am passionate about creating seamless and visually appealing digital experiences. I excel in transforming ideas into intuitive interfaces that enhance user engagement and satisfaction.",
                     style: TextStyle(
                       fontSize: w * 0.011,
                       height: 1.8,
@@ -66,7 +66,7 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
                 SizedBox(
                   width: w * 0.3,
                   child: Text(
-                    "Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.",
+                    "My expertise includes user research, wireframing, prototyping, and usability testing. I thrive on solving complex design challenges and crafting elegant user interfaces that blend aesthetics with functionality.",
                     style: TextStyle(
                       fontSize: w * 0.011,
                       height: 1.8,
@@ -81,7 +81,7 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
                 SizedBox(
                   width: w * 0.3,
                   child: Text(
-                    "Planning in the right direction after the identification of the problem space and stiching the right solution according to that is very cruicial.",
+                    "Committed to staying at the forefront of design trends, I ensure my work aligns with industry best practices. Let's connect to explore how my skills can elevate your digital projects to the next level.",
                     style: TextStyle(
                       fontSize: w * 0.011,
                       height: 1.8,
@@ -93,17 +93,24 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
                 SizedBox(
                   height: w * 0.02,
                 ),
-                SizedBox(
-                  width: w * 0.3,
-                  child: Text(
-                    "Mumbai, Marashtra",
-                    style: TextStyle(
-                      fontSize: w * 0.011,
-                      height: 1.8,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.subtitleTxt2,
+                Row(
+                  children: [
+                    Icon(Icons.location_city,
+                    color: AppColors.primary,
                     ),
-                  ),
+                    SizedBox(
+                      width: w*0.004,
+                    ),
+                    Text(
+                      "Bhiwandi, Marashtra",
+                      style: TextStyle(
+                        fontSize: w * 0.011,
+                        height: 1.8,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.primary,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
