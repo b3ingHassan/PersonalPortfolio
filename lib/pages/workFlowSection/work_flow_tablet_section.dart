@@ -111,7 +111,6 @@ class TabletCustomWorkFlow extends StatelessWidget {
           ),
           Text(
             description,
-            textAlign: TextAlign.justify,
             style: TextStyle(
               fontSize: w * 0.018,
               height: 1.8,

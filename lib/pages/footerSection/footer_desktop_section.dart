@@ -72,10 +72,10 @@ class _FooterDesktopSectionState extends State<FooterDesktopSection> {
             },
             child: InkWell(
               onTap: () {
-                OpenEmail();
+                OpenEmail().launchEmail();
               },
               child: Container(
-              height: w * 0.034,
+                height: w * 0.034,
                 width: w * 0.18,
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.primary, width: 1.2),

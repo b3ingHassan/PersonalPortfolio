@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/pages/footerSection/open_email.dart';
@@ -11,6 +12,8 @@ class FooterMobileSection extends StatefulWidget {
 }
 
 class _FooterMobileSectionState extends State<FooterMobileSection> {
+  bool isHovered=false;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -57,29 +60,43 @@ class _FooterMobileSectionState extends State<FooterMobileSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          GestureDetector(
-            onTap: 
-            (){
-              OpenEmail().launchEmail();
-
-            }
-            ,
-            child: Container(
-              height: w * 0.08,
-              width: w * 0.42,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                  4,
+          MouseRegion(
+            onEnter: (_)
+            {
+              setState(() {
+                isHovered =true;
+              });
+            },
+             onExit: (_)
+            {
+              setState(() {
+                isHovered =false;
+              });
+            },
+            child: GestureDetector(
+              onTap: 
+              (){
+                OpenEmail().launchEmail();
+            
+              }
+              ,
+              child: Container(
+                height: w * 0.08,
+                width: w * 0.42,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(
+                    4,
+                  ),
+                  color: isHovered?AppColors.bgWhite1:AppColors.primary,
                 ),
-                color: AppColors.primary,
-              ),
-              child: Center(
-                child: Text(
-                  "hassanwm99@gmail.com",
-                  style: TextStyle(
-                    fontSize: w * 0.028,
-                    color: AppColors.bgWhite1,
-                    fontWeight: FontWeight.normal,
+                child: Center(
+                  child: Text(
+                    "hassanwm99@gmail.com",
+                    style: TextStyle(
+                      fontSize: w * 0.028,
+                      color: isHovered?AppColors.primary:AppColors.bgWhite1,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ),
               ),

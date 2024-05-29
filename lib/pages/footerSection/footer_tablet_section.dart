@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
@@ -10,6 +11,8 @@ class FooterTabletSection extends StatefulWidget {
 }
 
 class _FooterTabletSectionState extends State<FooterTabletSection> {
+  bool isHovered=false;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -58,41 +61,56 @@ class _FooterTabletSectionState extends State<FooterTabletSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          GestureDetector(
-              onTap: 
-            (){
-              OpenEmail().launchEmail();
-
+          MouseRegion(
+            onEnter: (_){
+              setState(() {
+                isHovered=true;
+              });
             },
-            child: Container(
-              width: w * 0.34,
-              height: w * 0.058,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-               
-                color: AppColors.primary,
-              ),
-              child: Center(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.download,
-                      color: AppColors.bgWhite1,
-                    ),
-                    SizedBox(
-                      width: w * 0.008,
-                    ),
-                    Text(
-                      "hassanwm99@gmail.com",
-                      style: TextStyle(
-                        fontSize: w * 0.02,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.bgWhite1,
+            onExit: (_){
+              setState(() {
+                isHovered=false;
+              });
+            },
+            child: InkWell(
+                onTap: 
+              (){
+                OpenEmail().launchEmail();
+            
+              },
+              child: Container(
+                width: w * 0.34,
+                height: w * 0.058,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                 
+                  color: isHovered?AppColors.bgWhite1:AppColors.primary,
+                
+                ),
+                child: Center(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.email,
+                                           color: isHovered?AppColors.primary:AppColors.bgWhite1,
+
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: w * 0.008,
+                      ),
+                      Text(
+                        "hassanwm99@gmail.com",
+                        style: TextStyle(
+                          fontSize: w * 0.02,
+                          fontWeight: FontWeight.w500,
+                                            color: isHovered?AppColors.primary:AppColors.bgWhite1,
+
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

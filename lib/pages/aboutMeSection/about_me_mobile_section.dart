@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/colors.dart';
+
 class AboutMeMobileSection extends StatefulWidget {
   const AboutMeMobileSection({super.key});
 
@@ -45,23 +46,23 @@ class _AboutMeMobileSectionState extends State<AboutMeMobileSection> {
           Container(
             height: w * 0.8,
             width: w,
-           decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(
-                "assets/images/profilepic.jpg",
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                  "assets/images/profilepic.jpg",
+                ),
+                fit: BoxFit.cover,
               ),
-              fit: BoxFit.cover,
             ),
           ),
-          ),
           SizedBox(
-            height: w*0.06,
+            height: w * 0.06,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                "As a UI/UX designer with two years of hands-on experience, I am passionate about creating seamless and visually appealing digital experiences. I excel in transforming ideas into intuitive interfaces that enhance user engagement and satisfaction.",
                 style: TextStyle(
                   fontSize: w * 0.034,
                   height: 1.8,
@@ -73,7 +74,7 @@ class _AboutMeMobileSectionState extends State<AboutMeMobileSection> {
                 height: w * 0.06,
               ),
               Text(
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                "My expertise includes user research, wireframing, prototyping, and usability testing. I thrive on solving complex design challenges and crafting elegant user interfaces that blend aesthetics with functionality.",
                 style: TextStyle(
                   fontSize: w * 0.034,
                   height: 1.8,
@@ -85,7 +86,7 @@ class _AboutMeMobileSectionState extends State<AboutMeMobileSection> {
                 height: w * 0.06,
               ),
               Text(
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                "Committed to staying at the forefront of design trends, I ensure my work aligns with industry best practices. Let's connect to explore how my skills can elevate your digital projects to the next level.",
                 style: TextStyle(
                   fontSize: w * 0.034,
                   height: 1.8,
@@ -94,16 +95,27 @@ class _AboutMeMobileSectionState extends State<AboutMeMobileSection> {
                 ),
               ),
               SizedBox(
-                height: w * 0.02,
+                height: w * 0.06,
               ),
-              Text(
-                "Thane, Maharashtra",
-                style: TextStyle(
-                  fontSize: w * 0.034,
-                  height: 1.8,
-                  fontWeight: FontWeight.normal,
-                  color: AppColors.primary,
-                ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.location_city,
+                    color: AppColors.primary,
+                  ),
+                  SizedBox(
+                    width: w*0.02,
+                  ),
+                  Text(
+                    "Bhiwandi, Maharashtra",
+                    style: TextStyle(
+                      fontSize: w * 0.034,
+                      height: 1.8,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                ],
               ),
             ],
           )

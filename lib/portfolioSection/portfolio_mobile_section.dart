@@ -1,6 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../utils/colors.dart';
+
 class PortfolioMobileSection extends StatefulWidget {
   const PortfolioMobileSection({super.key});
 
@@ -44,27 +47,36 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
           SizedBox(height: w * 0.06),
           ProjectsCardMobile(
             w: w,
-            title: "GharTak Food Delivery App",
             description:
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                'Designed a user-friendly app for booking AC repair, painting, and car wash services. Streamlined booking process, verified professionals, and easy payments.',
+            img: 'assets/images/studioapp.png',
+            title: 'ServYou 24',
+            link:
+                'https://www.figma.com/design/lFFchRCwocFtTcpKOyTRh1/ServYou-24?node-id=6-2&t=9htn36JtR3aFJZJB-1',
           ),
           SizedBox(
             height: w * 0.1,
           ),
           ProjectsCardMobile(
             w: w,
-            title: "GharTak Food Delivery App",
             description:
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                "Designed a food delivery app enabling orders of multiple dishes from one restaurant. Created an intuitive interface for effortless browsing and ordering.",
+            img: 'assets/images/ghartak.png',
+            title: 'GharTak Food Delivery App',
+            link:
+                'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
           ),
           SizedBox(
             height: w * 0.1,
           ),
           ProjectsCardMobile(
             w: w,
-            title: "GharTak Food Delivery App",
             description:
-                "I designed a user-friendly food delivery app that enables customers to order multiple dishes from a single restaurant. Its intuitive interface makes browsing and ordering effortless, enhancing the overall food delivery experience.",
+                'Created a responsive web application for managing tasks, with real-time collaboration features. Utilized modern web technologies and ensured cross-browser compatibility. This project highlights my web development skills and ability to work on complex, interactive applications.',
+            img: 'assets/images/project1.png',
+            title: 'Task Management Web App',
+            link:
+                'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
           ),
         ],
       ),
@@ -74,13 +86,26 @@ class _PortfolioMobileSectionState extends State<PortfolioMobileSection> {
 
 class ProjectsCardMobile extends StatelessWidget {
   final String title;
+  final String img;
+  final String link;
   final String description;
   const ProjectsCardMobile({
-    super.key,
-    required this.w,
+    Key? key,
     required this.title,
+    required this.img,
+    required this.link,
     required this.description,
-  });
+    required this.w,
+  }) : super(key: key);
+  void launchFigmaLink() async {
+    // ignore: deprecated_member_use
+    if (await canLaunch(link)) {
+      // ignore: deprecated_member_use
+      await launch(link);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   final double w;
 
@@ -89,35 +114,50 @@ class ProjectsCardMobile extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: w * 0.04,
-            fontWeight: FontWeight.w500,
-            color: AppColors.titleTxt,
-          ),
-        ),
-        SizedBox(
-          height: w * 0.02,
-        ),
         Container(
           height: w * 0.5,
           width: w,
           color: AppColors.primary,
           child: Image.asset(
-              "assets/images/studioapp.png", // Path to the asset image
-              fit: BoxFit.cover, // You can adjust the fit as per your requirement
-            ),
+            img, // Path to the asset image
+            fit: BoxFit.cover, // You can adjust the fit as per your requirement
+          ),
+        ),
+        SizedBox(
+          height: w * 0.02,
+        ),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: w * 0.04,
+            fontWeight: FontWeight.w600,
+            color: AppColors.titleTxt,
+          ),
         ),
         SizedBox(height: w * 0.02),
         Text(
           description,
-          textAlign: TextAlign.justify,
           style: TextStyle(
             fontSize: w * 0.034,
             height: 1.8,
             fontWeight: FontWeight.normal,
             color: AppColors.subtitleTxt2,
+          ),
+        ),
+        SizedBox(height: w * 0.02),
+        InkWell(
+          onTap: () {
+            launchFigmaLink();
+          },
+          child: Text(
+            "Figma Link",
+            style: TextStyle(
+              decoration: TextDecoration.underline,
+              fontSize: w * 0.034,
+              height: 1.8,
+              fontWeight: FontWeight.normal,
+              color: AppColors.primary,
+            ),
           ),
         ),
       ],

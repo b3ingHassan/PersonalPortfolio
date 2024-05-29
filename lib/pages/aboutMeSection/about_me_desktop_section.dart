@@ -95,11 +95,12 @@ class _AboutMeDesktopSectionState extends State<AboutMeDesktopSection> {
                 ),
                 Row(
                   children: [
-                    Icon(Icons.location_city,
-                    color: AppColors.primary,
+                    Icon(
+                      Icons.location_city,
+                      color: AppColors.primary,
                     ),
                     SizedBox(
-                      width: w*0.004,
+                      width: w * 0.001,
                     ),
                     Text(
                       "Bhiwandi, Marashtra",
