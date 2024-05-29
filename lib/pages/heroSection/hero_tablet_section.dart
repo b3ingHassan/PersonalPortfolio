@@ -9,6 +9,8 @@ class HeroTabletSection extends StatefulWidget {
 }
 
 class _HeroTabletSectionState extends State<HeroTabletSection> {
+  bool isHovered = false;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -56,45 +58,64 @@ class _HeroTabletSectionState extends State<HeroTabletSection> {
           SizedBox(
             height: w * 0.024,
           ),
-          GestureDetector(
-            onTap: () {
-             openPDF();
-            },
-            child: Container(
-              height: w * 0.058,
-              width: w * 0.2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
-                border: Border.all(
-                  color: AppColors.primary,
-                  width: 1.2,
-                ),
-                color: AppColors.bgWhite1,
-              ),
-              child: Center(
-                  child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.download,
+        
+        MouseRegion(
+           onEnter: (_) {
+                      setState(() {
+                        isHovered = true;
+                      });
+                    },
+                    onExit: (_) {
+                      setState(() {
+                        isHovered = false;
+                      });
+                    },
+          child: InkWell(
+              onTap: () {
+               openPDF();
+              },
+              child: Container(
+                height: w * 0.058,
+                width: w * 0.2,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(4),
+                  border: Border.all(
                     color: AppColors.primary,
+                    width: 1.2,
                   ),
-                  SizedBox(
-                    width: w * 0.008,
-                  ),
-                  Text(
-                    "Resume",
-                    style: TextStyle(
-                      fontSize: w * 0.02,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.primary,
+                color: isHovered
+                                ? AppColors.primary
+                                : AppColors.bgWhite1,
+                ),
+                child: Center(
+                    child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.download,
+              color: isHovered
+                                        ? AppColors.bgWhite1
+                                        : AppColors.primary,
                     ),
-                  ),
-                ],
-              )),
+                    SizedBox(
+                      width: w * 0.008,
+                    ),
+                    Text(
+                      "Resume",
+                      style: TextStyle(
+                        fontSize: w * 0.02,
+                        fontWeight: FontWeight.w500,
+                color: isHovered
+                                        ? AppColors.bgWhite1
+                                        : AppColors.primary,
+                      ),
+                    ),
+                  ],
+                )),
+              ),
             ),
-          )
+        )
         ],
       ),
     );

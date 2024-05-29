@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
+import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
 class PortfolioTabletSection extends StatefulWidget {
@@ -115,6 +116,15 @@ class PortfolioCustomWidget extends StatelessWidget {
   final String description;
   final String img;
   final String link;
+    void launchFigmaLink() async {
+    // ignore: deprecated_member_use
+    if (await canLaunch(link)) {
+      // ignore: deprecated_member_use
+      await launch(link);
+    } else {
+      throw 'Could not launch $link';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -155,17 +165,22 @@ class PortfolioCustomWidget extends StatelessWidget {
             SizedBox(
             height: w * 0.01,
           ),
-            Text(
-          "Figma Link",
-            style: TextStyle(
-                  decoration: TextDecoration.underline,
-              
-              fontSize: w * 0.02,
-              height: 1.8,
-              fontWeight: FontWeight.normal,
-              color: AppColors.primary,
+            GestureDetector(
+              onTap: (){
+                launchFigmaLink();
+              },
+              child: Text(
+                        "Figma Link",
+              style: TextStyle(
+                    decoration: TextDecoration.underline,
+                
+                fontSize: w * 0.02,
+                height: 1.8,
+                fontWeight: FontWeight.normal,
+                color: AppColors.primary,
+              ),
+                        ),
             ),
-          ),
         ],
       ),
     );

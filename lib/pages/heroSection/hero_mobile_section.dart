@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 
@@ -11,6 +10,7 @@ class HeroMobileSection extends StatefulWidget {
 }
 
 class _HeroMobileSectionState extends State<HeroMobileSection> {
+  bool isHovered = false;
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -58,26 +58,53 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
           SizedBox(
             height: w * 0.04,
           ),
-          GestureDetector(
-            onTap: () {
-      openPDF();
+          MouseRegion(
+            onEnter: (_) {
+              setState(() {
+                isHovered = true;
+              });
             },
-            child: Container(
-              height: w * 0.08,
-              width: w * 0.4,
-              decoration: BoxDecoration(
+            onExit: (_) {
+              setState(() {
+                isHovered = false;
+              });
+            },
+            child: InkWell(
+              onTap: () {
+                openPDF();
+              },
+              child: Container(
+                height: w * 0.08,
+                width: w * 0.4,
+                decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                     4,
                   ),
-                  color: AppColors.primary),
-              child: Center(
-                child: Text(
-                  "Downlaod Resume",
-                  style: TextStyle(
-                    fontSize: w * 0.028,
-                    color: AppColors.bgWhite1,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  color: isHovered ? AppColors.bgWhite1 : AppColors.primary,
+                ),
+                child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.download,
+                      color:
+                          isHovered ? AppColors.primary : AppColors.bgWhite1,
+                    ),
+                    SizedBox(
+                      width: w*0.004,
+                    ),
+                    Text(
+                      "Downlaod Resume",
+                      style: TextStyle(
+                        fontSize: w * 0.028,
+                        color: isHovered
+                            ? AppColors.primary
+                            : AppColors.bgWhite1,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

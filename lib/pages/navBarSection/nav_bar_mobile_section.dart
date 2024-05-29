@@ -22,16 +22,6 @@ class NavBarMobileSection extends StatelessWidget {
             w * 0.04,
             FontWeight.bold,
           ),
-          const Spacer(),
-          InkWell(
-            onTap: () {
-              Scaffold.of(context).openDrawer();
-            },
-            child: Icon(
-              Icons.menu,
-              color: AppColors.bgWhite1,
-            ),
-          )
         ],
       ),
     );

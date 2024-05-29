@@ -12,7 +12,7 @@ class FooterMobileSection extends StatefulWidget {
 }
 
 class _FooterMobileSectionState extends State<FooterMobileSection> {
-  bool isHovered=false;
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -61,43 +61,51 @@ class _FooterMobileSectionState extends State<FooterMobileSection> {
             height: w * 0.04,
           ),
           MouseRegion(
-            onEnter: (_)
-            {
+            onEnter: (_) {
               setState(() {
-                isHovered =true;
+                isHovered = true;
               });
             },
-             onExit: (_)
-            {
+            onExit: (_) {
               setState(() {
-                isHovered =false;
+                isHovered = false;
               });
             },
             child: GestureDetector(
-              onTap: 
-              (){
+              onTap: () {
                 OpenEmail().launchEmail();
-            
-              }
-              ,
+              },
               child: Container(
                 height: w * 0.08,
-                width: w * 0.42,
+                width: w * 0.5,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
                     4,
                   ),
-                  color: isHovered?AppColors.bgWhite1:AppColors.primary,
+                  color: isHovered ? AppColors.bgWhite1 : AppColors.primary,
                 ),
-                child: Center(
-                  child: Text(
-                    "hassanwm99@gmail.com",
-                    style: TextStyle(
-                      fontSize: w * 0.028,
-                      color: isHovered?AppColors.primary:AppColors.bgWhite1,
-                      fontWeight: FontWeight.normal,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.email,
+                      color: isHovered ? AppColors.primary : AppColors.bgWhite1,
+                      size: w * 0.045,
                     ),
-                  ),
+                    SizedBox(
+                      width: w * 0.02,
+                    ),
+                    Text(
+                      "hassanwm99@gmail.com",
+                      style: TextStyle(
+                        fontSize: w * 0.028,
+                        color:
+                            isHovered ? AppColors.primary : AppColors.bgWhite1,
+                        fontWeight: FontWeight.normal,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
