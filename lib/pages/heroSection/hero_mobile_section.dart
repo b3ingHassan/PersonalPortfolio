@@ -34,27 +34,20 @@ class _HeroMobileSectionState extends State<HeroMobileSection> {
               fontWeight: FontWeight.bold,
             ),
           ),
+           SizedBox(
+            height: w * 0.02,
+          ),
+         
           Text(
-            "UI UX Designer",
+            "a freelance UI UX Designer\nand Flutter Developer.",
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: w * 0.06,
               color: AppColors.accent,
               fontWeight: FontWeight.bold,
             ),
           ),
-          SizedBox(
-            height: w * 0.02,
-          ),
-          Text(
-            "Creating Engaging Interfaces that Connect\nUsers with Purposeful Design Solutions",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: w * 0.03,
-              color: AppColors.bgWhite2,
-              fontWeight: FontWeight.normal,
-              height: w * 0.0034,
-            ),
-          ),
+         
           SizedBox(
             height: w * 0.04,
           ),

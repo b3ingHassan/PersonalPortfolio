@@ -56,7 +56,7 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
                 w: w,
                 description:
                     'Designed a user-friendly app for booking AC repair, painting, and car wash services. Streamlined booking process, verified professionals, and easy payments.',
-                img: 'assets/images/studioapp.png',
+                img: 'assets/images/ServYouDesktop.png',
                 title: 'ServYou 24',
                 link:
                     'https://www.figma.com/design/lFFchRCwocFtTcpKOyTRh1/ServYou-24?node-id=6-2&t=9htn36JtR3aFJZJB-1',
@@ -65,7 +65,7 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
                 w: w,
                 description:
                     "Designed a food delivery app enabling orders of multiple dishes from one restaurant. Created an intuitive interface for effortless browsing and ordering.",
-                img: 'assets/images/ghartak.png',
+                img: "assets/images/GharTakDesktop.png",
                 title: 'GharTak Food Delivery App',
                 link:
                     'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
@@ -73,11 +73,10 @@ class _PortfolioDesktopSectionState extends State<PortfolioDesktopSection> {
               ProjectCardDesktop(
                 w: w,
                 description:
-                    'Created a responsive web application for managing tasks, with real-time collaboration features. Utilized modern web technologies and ensured cross-browser compatibility. This project highlights my web development skills and ability to work on complex, interactive applications.',
-                img: 'assets/images/project1.png',
-                title: 'Task Management Web App',
+             "Developed a comprehensive studio booking application, tailored specifically for the music industry. This app enables artists and producers to seamlessly book recording studios for creating albums, advertisements, and live gigs. ",img: "assets/images/StudioDesktop.png",
+                title: 'Studio Booking App',
                 link:
-                    'https://www.figma.com/design/JnSol7fcWmg7sDiEFqfYRu/GharTak-Food-Delivery-App?node-id=0%3A1&t=fa4v5j6m62VYxq3l-1',
+                    'https://www.figma.com/design/fbBLH4veFTEGGxAP2ro69r/Studio-App-(-Fig-)?node-id=0-1&t=Cnp7BHd9agyE4mR5-1',
               ),
             ],
           ),

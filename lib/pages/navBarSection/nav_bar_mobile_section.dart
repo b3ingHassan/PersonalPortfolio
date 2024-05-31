@@ -18,7 +18,7 @@ class NavBarMobileSection extends StatelessWidget {
           navBarMobileItem(
             w,
             AppColors.bgWhite1,
-            "bringHassan",
+            "b3ingHassan",
             w * 0.04,
             FontWeight.bold,
           ),

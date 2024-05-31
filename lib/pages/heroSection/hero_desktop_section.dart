@@ -54,6 +54,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                   ),
                   Text(
                     "a freelance UI UX Designer\nand Flutter Developer.",
+                    
                     style: TextStyle(
                       fontSize: w * 0.02,
                       color: AppColors.subtitleTxt1,

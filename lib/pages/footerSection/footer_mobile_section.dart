@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:personal_portfolio/pages/footerSection/open_email.dart';
 import 'package:personal_portfolio/utils/colors.dart';
 

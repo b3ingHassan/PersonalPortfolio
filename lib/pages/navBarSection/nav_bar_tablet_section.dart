@@ -29,12 +29,7 @@ class _NavBarTabletSectionState extends State<NavBarTabletSection> {
               color: AppColors.bgWhite1,
             ),
           ),
-          const Spacer(),
-          Icon(
-            Icons.menu,
-            color: AppColors.bgWhite1,
-            size: w * 0.04,
-          )
+         
         ],
       ),
     );
