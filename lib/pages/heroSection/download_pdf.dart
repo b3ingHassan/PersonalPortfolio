@@ -9,3 +9,21 @@
       throw 'Could not launch $pdfFile';
     }
   }
+
+ void launchGitHub() async {
+    const pdfFile = 'https://github.com/b3ingHassan';
+    if (await canLaunch(pdfFile)) {
+      await launch(pdfFile);
+    } else {
+      throw 'Could not launch $pdfFile';
+    }
+  }
+
+ void launchLinkedin() async {
+    const pdfFile = 'https://www.linkedin.com/in/hassan-momin-763960248/';
+    if (await canLaunch(pdfFile)) {
+      await launch(pdfFile);
+    } else {
+      throw 'Could not launch $pdfFile';
+    }
+  }

@@ -12,12 +12,19 @@ class NavBarMobileSection extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: w * 0.04),
       height: w * 0.14,
       width: w,
-      color: AppColors.bgColor1,
+      decoration: BoxDecoration(boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.04),
+          spreadRadius: 5, // Spread radius
+          blurRadius: 10, // Blur radius
+          offset: const Offset(0, 5),
+        ),
+      ], color: AppColors.bgWhite1),
       child: Row(
         children: [
           navBarMobileItem(
             w,
-            AppColors.bgWhite1,
+            AppColors.primary,
             "b3ingHassan",
             w * 0.04,
             FontWeight.bold,

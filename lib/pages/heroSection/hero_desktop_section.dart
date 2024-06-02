@@ -1,6 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/pages/heroSection/download_pdf.dart';
 import 'package:personal_portfolio/utils/colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HeroDesktopSection extends StatefulWidget {
   const HeroDesktopSection({super.key});
@@ -11,6 +14,9 @@ class HeroDesktopSection extends StatefulWidget {
 
 class _HeroDesktopSectionState extends State<HeroDesktopSection> {
   bool isHovered = false;
+  bool isHoveredg = false;
+  bool isHoveredl = false;
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -30,33 +36,20 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "HELLO",
+                    "UI UX Designer\nFlutter Developer.",
                     style: TextStyle(
-                      fontSize: w * 0.016,
-                      color: AppColors.subtitleTxt1,
-                      letterSpacing: 1.2,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  SizedBox(
-                    height: w * 0.004,
-                  ),
-                  Text(
-                    "I'm Hassan",
-                    style: TextStyle(
-                      fontSize: w * 0.048,
-                      color: AppColors.primary,
+                      fontSize: w * 0.036,
+                      color: AppColors.titleTxt,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   SizedBox(
-                    height: w * 0.002,
+                    height: w * 0.01,
                   ),
                   Text(
-                    "a freelance UI UX Designer\nand Flutter Developer.",
-                    
+                    "Hi, I'm Hassan Momin. I build beautiful, easy-to-use \nmobile apps with Flutter and a keen eye for design.",
                     style: TextStyle(
-                      fontSize: w * 0.02,
+                      fontSize: w * 0.013,
                       color: AppColors.subtitleTxt1,
                       fontWeight: FontWeight.normal,
                     ),
@@ -118,7 +111,65 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
                         ),
                       ),
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: w * 0.018,
+                  ),
+                  Row(
+                    children: [
+                      MouseRegion(
+                        onEnter: (_) {
+                          setState(() {
+                            isHoveredg = true;
+                          });
+                        },
+                        onExit: (_) {
+                          setState(() {
+                            isHoveredg = false;
+                          });
+                        },
+                        child: InkWell(
+                          onTap: () {
+                            launchGitHub();
+                          },
+                          child: SvgPicture.asset(
+                            'assets/images/github.svg',
+                            height: w * 0.02,
+                            color: isHoveredg
+                                ? AppColors.primary
+                                : AppColors.titleTxt,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: w * 0.01,
+                      ),
+                      MouseRegion(
+                        onEnter: (_) {
+                          setState(() {
+                            isHoveredl = true;
+                          });
+                        },
+                        onExit: (_) {
+                          setState(() {
+                            isHoveredl = false;
+                          });
+                        },
+                        child: InkWell(
+                          onTap: () {
+                            launchLinkedin();
+                          },
+                          child: SvgPicture.asset(
+                            'assets/images/link.svg',
+                            height: w * 0.022,
+                            color: isHoveredl
+                                ? AppColors.primary
+                                : AppColors.titleTxt,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -127,7 +178,7 @@ class _HeroDesktopSectionState extends State<HeroDesktopSection> {
             child: Container(
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage("assets/images/profilepic.jpg"),
+                  image: AssetImage("assets/images/hero.png"),
                   fit: BoxFit.cover,
                 ),
                 color: AppColors.bgColor1,

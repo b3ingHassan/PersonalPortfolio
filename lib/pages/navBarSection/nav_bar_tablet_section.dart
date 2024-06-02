@@ -14,11 +14,22 @@ class _NavBarTabletSectionState extends State<NavBarTabletSection> {
     double w = MediaQuery.of(context).size.width;
 
     return Container(
+      decoration: BoxDecoration(
+      color: AppColors.bgWhite1,
+    
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.04),
+            spreadRadius: 5, // Spread radius
+            blurRadius: 10, // Blur radius
+            offset: const Offset(0, 5),
+          ),
+        ],
+      ),
       padding: EdgeInsets.symmetric(
         horizontal: w * 0.024,
       ),
       height: w * 0.1,
-      color: AppColors.bgColor1,
       child: Row(
         children: [
           Text(
@@ -26,10 +37,9 @@ class _NavBarTabletSectionState extends State<NavBarTabletSection> {
             style: TextStyle(
               fontSize: w * 0.03,
               fontWeight: FontWeight.bold,
-              color: AppColors.bgWhite1,
+              color: AppColors.primary,
             ),
           ),
-         
         ],
       ),
     );
