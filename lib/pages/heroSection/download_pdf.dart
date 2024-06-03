@@ -2,7 +2,7 @@
 
  import 'package:url_launcher/url_launcher.dart';
  void openPDF() async {
-    const pdfFile = 'https://drive.google.com/file/d/1Go_0ewx3Ld8bpewaERsT940zSl7Rxkne/view?usp=sharing';
+    const pdfFile = 'https://drive.google.com/file/d/11QXnW7w4C8x2vXOHx1WRwStkJpBKaG-w/view?usp=sharing';
     if (await canLaunch(pdfFile)) {
       await launch(pdfFile);
     } else {
